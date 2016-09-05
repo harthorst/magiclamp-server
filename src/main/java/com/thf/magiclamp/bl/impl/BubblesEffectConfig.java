@@ -11,4 +11,6 @@ public class BubblesEffectConfig implements IEffectConfig {
     public enum Direction {
         UP, DOWN
     }
+
+    private Direction direction;
 }

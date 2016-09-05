@@ -9,12 +9,19 @@ import org.springframework.core.io.ResourceLoader;
 import com.thf.magiclamp.bl.IEffectConfig;
 import com.thf.magiclamp.bl.IEffectService;
 import com.thf.magiclamp.bl.ResourceNotFoundException;
+import com.thf.magiclamp.bl.model.EffectServiceInfo;
 
 public abstract class AbstractEffectService<T extends IEffectConfig> implements IEffectService {
     T config;
+    protected EffectServiceInfo info;
 
     @Autowired
     private ResourceLoader resourceLoader;
+
+    @Override
+    public EffectServiceInfo getInfo() {
+        return info;
+    }
 
     @Override
     public byte[] getIcon() throws ResourceNotFoundException {
